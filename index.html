@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sorrento Restaurant & Pizzeria</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f4;
+    }
+
+    .hero-bg {
+      background:
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+        url('https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1600&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-5px);
+    }
+  </style>
+</head>
+
+<body class="text-stone-800">
+
+  <!-- NAVBAR -->
+  <nav class="bg-red-900 text-white sticky top-0 z-50 shadow-xl">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div>
+        <h1 class="text-3xl font-black">SORRENTO</h1>
+        <p class="text-sm text-red-100">Restaurant & Pizzeria</p>
+      </div>
+
+      <div class="hidden md:flex gap-6 font-semibold">
+        <a href="#pizza" class="hover:text-orange-300">Pizza</a>
+        <a href="#pasta" class="hover:text-orange-300">Pasta</a>
+        <a href="#salads" class="hover:text-orange-300">Salads</a>
+        <a href="#desserts" class="hover:text-orange-300">Desserts</a>
+        <a href="#contact" class="hover:text-orange-300">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero-bg min-h-screen flex items-center justify-center text-white text-center px-6">
+    <div>
+      <h1 class="text-6xl md:text-8xl font-black tracking-wide">
+        SORRENTO
+      </h1>
+
+      <p class="mt-4 text-2xl italic">
+        Authentic Italian Restaurant Since 1975
+      </p>
+
+      <p class="max-w-2xl mx-auto mt-6 text-lg text-stone-200">
+        Enjoy handcrafted pizzas, pasta, salads, desserts,
+        and authentic Italian flavors in Karlskrona.
+      </p>
+
+      <div class="mt-10 flex flex-wrap justify-center gap-4">
+        <a href="#pizza"
+          class="bg-orange-500 hover:bg-orange-600 px-8 py-4 rounded-2xl text-lg font-bold transition">
+          View Menu
+        </a>
+
+        <a href="#contact"
+          class="border border-white hover:bg-white hover:text-black px-8 py-4 rounded-2xl text-lg font-bold transition">
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- QR SECTION -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+
+      <div>
+        <h2 class="text-5xl font-black text-red-900">
+          Digital QR Menu
+        </h2>
+
+        <p class="mt-6 text-lg text-stone-600 leading-relaxed">
+          Scan the QR code to access our digital menu instantly.
+          Perfect for dine-in customers and takeaway orders.
+        </p>
+
+        <div class="mt-8 bg-stone-100 p-6 rounded-3xl">
+          <p class="font-bold text-lg">Website URL:</p>
+          <p class="text-red-700 break-all">
+            https://sorrentokarlskrona.se
+          </p>
+        </div>
+      </div>
+
+      <div class="flex justify-center">
+        <div class="w-72 h-72 bg-stone-200 rounded-3xl border-4 border-dashed border-stone-500 flex items-center justify-center">
+          <div class="text-center">
+            <div class="text-7xl">▣</div>
+            <p class="mt-4 font-bold text-lg">QR CODE</p>
+            <p class="text-sm text-stone-600">
+              Replace with generated QR image
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PIZZA -->
+  <section id="pizza" class="py-20">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <div class="flex flex-wrap justify-between items-center gap-4 mb-12">
+        <h2 class="text-5xl font-black text-red-900">
+          Pizza Menu
+        </h2>
+
+        <span class="bg-red-900 text-white px-6 py-3 rounded-full font-bold">
+          Classic Italian Pizzas
+        </span>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- CARD -->
+        <div class="menu-card bg-white p-8 rounded-3xl shadow-xl transition duration-300">
+          <div class="flex justify-between">
+            <h3 class="text-2xl font-black text-red-900">Vezuvio</h3>
+            <span class="font-bold">149 SEK</span>
+          </div>
+          <p class="mt-4 text-stone-600">
+            Ham and cheese
+          </p>
+        </div>
+
+        <div class="menu-card bg-white p-8 rounded-3xl shadow-xl transition duration-300">
+          <div class="flex justify-between">
+            <h3 class="text-2xl font-black text-red-900">Margherita</h3>
+            <span class="font-bold">149 SEK</span>
+          </div>
+          <p class="mt-4 text-stone-600">
+            Cheese pizza
+          </p>
+        </div>
+
+        <div class="menu-card bg-white p-8 rounded-3xl shadow-xl transition duration-300">
+          <div class="flex justify-between">
+            <h3 class="text-2xl font-black text-red-900">Ciao Ciao</h3>
+            <span class="font-bold">169 SEK</span>
+          </div>
+          <p class="mt-4 text-stone-600">
+            Beef, onion, mushrooms, tomatoes, béarnaise sauce
+          </p>
+        </div>
+
+        <div class="menu-card bg-white p-8 rounded-3xl shadow-xl transition duration-300">
+          <div class="flex justify-between">
+            <h3 class="text-2xl font-black text-red-900">Kebab Pizza</h3>
+            <span class="font-bold">169 SEK</span>
+          </div>
+          <p class="mt-4 text-stone-600">
+            Kebab meat, vegetables and sauce
+          </p>
+        </div>
+
+        <div class="menu-card bg-white p-8 rounded-3xl shadow-xl transition duration-300">
+          <div class="flex justify-between">
+            <h3 class="text-2xl font-black text-red-900">Quattro Formaggi</h3>
+            <span class="font-bold">169 SEK</span>
+          </div>
+          <p class="mt-4 text-stone-600">
+            Mozzarella, gorgonzola, feta cheese and garlic cheese
+          </p>
+        </div>
+
+        <div class="menu-card bg-white p-8 rounded-3xl shadow-xl transition duration-300">
+          <div class="flex justify-between">
+            <h3 class="text-2xl font-black text-red-900">Pizza Salmone</h3>
+            <span class="font-bold">169 SEK</span>
+          </div>
+          <p class="mt-4 text-stone-600">
+            Salmon, spinach and garlic cheese
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PASTA -->
+  <section id="pasta" class="bg-white py-20">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <h2 class="text-5xl font-black text-orange-700 mb-12">
+        Pasta Selection
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <div class="bg-stone-50 p-8 rounded-3xl shadow-lg">
+          <div class="flex justify-between">
+            <h3 class="text-2xl font-black">Pasta Speciale</h3>
+            <span class="font-bold">189 SEK</span>
+          </div>
+
+          <p class="mt-4 text-stone-600">
+            Salami, paprika, mushrooms, onion and gorgonzola sauce
+          </p>
+        </div>
+
+        <div class="bg-stone-50 p-8 rounded-3xl shadow-lg">
+          <div class="flex justify-between">
+            <h3 class="text-2xl font-black">Frutti di Mare</h3>
+            <span class="font-bold">189 SEK</span>
+          </div>
+
+          <p class="mt-4 text-stone-600">
+            Shrimp, mussels, tuna, tomato sauce and cheese sauce
+          </p>
+        </div>
+
+        <div class="bg-stone-50 p-8 rounded-3xl shadow-lg">
+          <div class="flex justify-between">
+            <h3 class="text-2xl font-black">Al Salmone</h3>
+            <span class="font-bold">189 SEK</span>
+          </div>
+
+          <p class="mt-4 text-stone-600">
+            Salmon, cream and spinach
+          </p>
+        </div>
+
+        <div class="bg-stone-50 p-8 rounded-3xl shadow-lg">
+          <div class="flex justify-between">
+            <h3 class="text-2xl font-black">Chicken Pasta</h3>
+            <span class="font-bold">189 SEK</span>
+          </div>
+
+          <p class="mt-4 text-stone-600">
+            Chicken with creamy curry sauce
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SALADS -->
+  <section id="salads" class="py-20">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <h2 class="text-5xl font-black text-green-700 mb-12">
+        Fresh Salads
+      </h2>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+        <div class="bg-green-50 p-8 rounded-3xl shadow-lg text-center">
+          <h3 class="text-2xl font-black">Chicken Salad</h3>
+          <p class="mt-4 text-green-700 font-bold">189 SEK</p>
+        </div>
+
+        <div class="bg-green-50 p-8 rounded-3xl shadow-lg text-center">
+          <h3 class="text-2xl font-black">Halloumi Salad</h3>
+          <p class="mt-4 text-green-700 font-bold">189 SEK</p>
+        </div>
+
+        <div class="bg-green-50 p-8 rounded-3xl shadow-lg text-center">
+          <h3 class="text-2xl font-black">Shrimp Salad</h3>
+          <p class="mt-4 text-green-700 font-bold">189 SEK</p>
+        </div>
+
+        <div class="bg-green-50 p-8 rounded-3xl shadow-lg text-center">
+          <h3 class="text-2xl font-black">Kebab Salad</h3>
+          <p class="mt-4 text-green-700 font-bold">189 SEK</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DESSERTS -->
+  <section id="desserts" class="bg-stone-900 text-white py-20">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+      <h2 class="text-5xl font-black mb-12">
+        Desserts
+      </h2>
+
+      <div class="grid md:grid-cols-5 gap-6">
+
+        <div class="bg-white/10 p-6 rounded-3xl">
+          <h3 class="text-2xl font-black">Tiramisu</h3>
+          <p class="mt-4 text-orange-300 font-bold">85 SEK</p>
+        </div>
+
+        <div class="bg-white/10 p-6 rounded-3xl">
+          <h3 class="text-2xl font-black">Gelato</h3>
+          <p class="mt-4 text-orange-300 font-bold">85 SEK</p>
+        </div>
+
+        <div class="bg-white/10 p-6 rounded-3xl">
+          <h3 class="text-2xl font-black">Coppa Amaretto</h3>
+          <p class="mt-4 text-orange-300 font-bold">85 SEK</p>
+        </div>
+
+        <div class="bg-white/10 p-6 rounded-3xl">
+          <h3 class="text-2xl font-black">Carrot Cake</h3>
+          <p class="mt-4 text-orange-300 font-bold">85 SEK</p>
+        </div>
+
+        <div class="bg-white/10 p-6 rounded-3xl">
+          <h3 class="text-2xl font-black">Fried Banana</h3>
+          <p class="mt-4 text-orange-300 font-bold">85 SEK</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL MEDIA POSTERS -->
+  <section class="py-20 bg-white">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+      <h2 class="text-5xl font-black text-center mb-16">
+        Social Media Posters
+      </h2>
+
+      <div class="grid lg:grid-cols-3 gap-10">
+
+        <div class="rounded-[2rem] p-10 text-white bg-gradient-to-br from-red-700 to-orange-500 shadow-2xl">
+          <p class="uppercase tracking-widest text-sm">
+            Friday Special
+          </p>
+
+          <h3 class="text-5xl font-black mt-6">
+            Pizza Night
+          </h3>
+
+          <p class="mt-6 text-lg">
+            Authentic Italian pizzas with crispy edges and fresh toppings.
+          </p>
+
+          <div class="mt-10 text-6xl font-black">
+            149:-
+          </div>
+        </div>
+
+        <div class="rounded-[2rem] p-10 text-white bg-gradient-to-br from-green-700 to-emerald-500 shadow-2xl">
+          <p class="uppercase tracking-widest text-sm">
+            Healthy Choice
+          </p>
+
+          <h3 class="text-5xl font-black mt-6">
+            Fresh Salads
+          </h3>
+
+          <p class="mt-6 text-lg">
+            Fresh vegetables and premium ingredients every day.
+          </p>
+
+          <div class="mt-10 text-6xl font-black">
+            189:-
+          </div>
+        </div>
+
+        <div class="rounded-[2rem] p-10 text-white bg-gradient-to-br from-stone-900 to-stone-700 shadow-2xl">
+          <p class="uppercase tracking-widest text-sm">
+            Dessert Time
+          </p>
+
+          <h3 class="text-5xl font-black mt-6">
+            Tiramisu
+          </h3>
+
+          <p class="mt-6 text-lg">
+            Homemade Italian dessert served fresh every day.
+          </p>
+
+          <div class="mt-10 text-6xl font-black">
+            85:-
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="bg-red-950 text-white py-20">
+
+    <div class="max-w-5xl mx-auto px-6 text-center">
+
+      <h2 class="text-5xl font-black">
+        Visit Sorrento
+      </h2>
+
+      <p class="mt-6 text-xl text-red-100">
+        Restaurant & Pizzeria in Karlskrona
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-8 mt-14">
+
+        <div class="bg-white/10 p-8 rounded-3xl">
+          <h3 class="text-2xl font-black">Address</h3>
+          <p class="mt-4 text-red-100">
+            Karlskrona, Sweden
+          </p>
+        </div>
+
+        <div class="bg-white/10 p-8 rounded-3xl">
+          <h3 class="text-2xl font-black">Phone</h3>
+          <p class="mt-4 text-red-100">
+            +46 XX XXX XX XX
+          </p>
+        </div>
+
+        <div class="bg-white/10 p-8 rounded-3xl">
+          <h3 class="text-2xl font-black">Opening Hours</h3>
+          <p class="mt-4 text-red-100">
+            Daily: 11:00 - 22:00
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-black text-white py-10 text-center">
+    <h2 class="text-3xl font-black">
+      SORRENTO
+    </h2>
+
+    <p class="mt-3 text-stone-400">
+      Restaurant & Pizzeria • Since 1975
+    </p>
+
+    <p class="mt-6 text-stone-500 text-sm">
+      Modern restaurant website built from the restaurant menu.
+    </p>
+  </footer>
+
+</body>
+</html>
