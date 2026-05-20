@@ -2,459 +2,342 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sorrento Restaurant & Pizzeria</title>
-
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f4;
-    }
-
-    .hero-bg {
-      background:
-        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-        url('https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1600&auto=format&fit=crop');
-      background-size: cover;
-      background-position: center;
-    }
-
-    .menu-card:hover {
-      transform: translateY(-5px);
-    }
-  </style>
+  <meta name="description" content="Sorrento restaurant menu with English and Swedish versions." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <a href="#top">SORRENTO</a>
+        <p>Restaurant & Pizzeria</p>
+      </div>
 
-<body class="text-stone-800">
+      <nav id="site-nav" class="site-nav">
+        <a href="#pizza">Pizza</a>
+        <a href="#pan-pizza">Pan Pizza</a>
+        <a href="#pasta">Pasta</a>
+        <a href="#starters">Starters</a>
+        <a href="#main-courses">Main Courses</a>
+        <a href="#salads">Salads</a>
+        <a href="#desserts">Desserts</a>
+        <a href="#drinks">Drinks</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-  <!-- NAVBAR -->
-  <nav class="bg-red-900 text-white sticky top-0 z-50 shadow-xl">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="header-actions">
+        <button id="language-toggle" class="language-toggle" type="button" aria-label="Switch language">SV</button>
+        <button class="menu-toggle" aria-controls="site-nav" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Authentic Italian food since 1975</p>
+        <h1>Sorrento</h1>
+        <p class="hero-text">A clean menu for dine-in and takeaway guests.</p>
+        <p class="service-line">Dine-in · Takeaway</p>
+      </div>
+    </section>
+
+    <!-- PIZZA SECTION -->
+    <section id="pizza" class="menu-section">
+      <div class="section-head">
+        <h2 class="section-title">Pizza Menu</h2>
+        <span class="section-badge">Classic Italian Pizzas</span>
+      </div>
+      <div class="menu-grid">
+        <div class="menu-item" data-lang="en"><h3>Vezuvio</h3><span class="price">149 SEK</span><p>Ham and cheese</p></div>
+        <div class="menu-item" data-lang="en"><h3>Margherita</h3><span class="price">149 SEK</span><p>Cheese pizza</p></div>
+        <div class="menu-item" data-lang="en"><h3>Funghi</h3><span class="price">149 SEK</span><p>Mushroom</p></div>
+        <div class="menu-item" data-lang="en"><h3>Bolognese</h3><span class="price">159 SEK</span><p>Meat sauce and onion</p></div>
+        <div class="menu-item" data-lang="en"><h3>Ciao Ciao</h3><span class="price">169 SEK</span><p>Beef, onion, mushrooms, tomatoes, béarnaise</p></div>
+        <div class="menu-item" data-lang="en"><h3>Cacciatore</h3><span class="price">159 SEK</span><p>Salami and olives</p></div>
+        <div class="menu-item" data-lang="en"><h3>Capricciosa</h3><span class="price">159 SEK</span><p>Mushroom and ham</p></div>
+        <div class="menu-item" data-lang="en"><h3>Calzone</h3><span class="price">159 SEK</span><p>Tomato sauce, cheese, and ham</p></div>
+        <div class="menu-item" data-lang="en"><h3>El Greco</h3><span class="price">169 SEK</span><p>Feta cheese, tomato, paprika, olives, garlic</p></div>
+        <div class="menu-item" data-lang="en"><h3>Fiskarens Special</h3><span class="price">169 SEK</span><p>Shrimp, crab sticks, mussels, tuna, garlic</p></div>
+        <div class="menu-item" data-lang="en"><h3>Gorgonzola</h3><span class="price">169 SEK</span><p>Olives, gorgonzola, tomato, beef</p></div>
+        <div class="menu-item" data-lang="en"><h3>Godfather</h3><span class="price">159 SEK</span><p>Mussels, tuna, paprika (spicy)</p></div>
+        <div class="menu-item" data-lang="en"><h3>Indiana</h3><span class="price">169 SEK</span><p>Beef, tomato, banana, curry</p></div>
+        <div class="menu-item" data-lang="en"><h3>Quattro Stagioni</h3><span class="price">159 SEK</span><p>Mushrooms, shrimp, ham, mussels</p></div>
+        <div class="menu-item" data-lang="en"><h3>Quattro Formaggi</h3><span class="price">169 SEK</span><p>Mozzarella, gorgonzola, feta, garlic cheese</p></div>
+        <div class="menu-item" data-lang="en"><h3>Husets Special</h3><span class="price">169 SEK</span><p>The pizzeria's secret...</p></div>
+        <div class="menu-item" data-lang="en"><h3>Hawaii</h3><span class="price">159 SEK</span><p>Ham and pineapple</p></div>
+        <div class="menu-item" data-lang="en"><h3>Chicken Pizza</h3><span class="price">169 SEK</span><p>Chicken, mushrooms, banana, curry</p></div>
+        <div class="menu-item" data-lang="en"><h3>Kebab Pizza</h3><span class="price">169 SEK</span><p>Kebab, vegetables, sauce</p></div>
+        <div class="menu-item" data-lang="en"><h3>La Mafia</h3><span class="price">159 SEK</span><p>Bacon, onion, paprika, mushrooms (spicy)</p></div>
+        <div class="menu-item" data-lang="en"><h3>Lambada</h3><span class="price">169 SEK</span><p>Beef, ham, bacon, meat sauce, béarnaise, garlic</p></div>
+        <div class="menu-item" data-lang="en"><h3>Mazzini</h3><span class="price">169 SEK</span><p>Beef, garlic cheese, tomatoes (spicy)</p></div>
+        <div class="menu-item" data-lang="en"><h3>Tex Mex</h3><span class="price">169 SEK</span><p>Meat sauce, mushrooms, paprika, salami, nachos (spicy)</p></div>
+        <div class="menu-item" data-lang="en"><h3>Napolitana</h3><span class="price">169 SEK</span><p>Sardines, olives, garlic</p></div>
+        <div class="menu-item" data-lang="en"><h3>Parma Speciale</h3><span class="price">169 SEK</span><p>Parma ham, parma cheese, tomatoes</p></div>
+        <div class="menu-item" data-lang="en"><h3>Pescatore</h3><span class="price">159 SEK</span><p>Tuna and onion</p></div>
+        <div class="menu-item" data-lang="en"><h3>Tropicana</h3><span class="price">159 SEK</span><p>Ham, pineapple, banana, curry</p></div>
+        <div class="menu-item" data-lang="en"><h3>Vegetariana</h3><span class="price">159 SEK</span><p>Paprika, mushrooms, olives, tomato, onion</p></div>
+        <div class="menu-item" data-lang="en"><h3>Vegetarisk Special</h3><span class="price">169 SEK</span><p>Mushrooms, pineapple, tomato, olives, gorgonzola, garlic</p></div>
+        <div class="menu-item" data-lang="en"><h3>Viking Boat</h3><span class="price">169 SEK</span><p>Mushrooms, onions, chicken, béarnaise (half-baked)</p></div>
+        <div class="menu-item" data-lang="en"><h3>Sorrento</h3><span class="price">169 SEK</span><p>Mushrooms, onion, mozzarella, pesto, tomato, olives</p></div>
+        <div class="menu-item" data-lang="en"><h3>Italia</h3><span class="price">169 SEK</span><p>Chicken, spinach, paprika, garlic cheese</p></div>
+        <div class="menu-item" data-lang="en"><h3>Milano</h3><span class="price">169 SEK</span><p>Salami, broccoli, paprika, mozzarella</p></div>
+        <div class="menu-item" data-lang="en"><h3>Pizza Salmone</h3><span class="price">169 SEK</span><p>Salmon, spinach, garlic cheese</p></div>
+        <div class="menu-item" data-lang="en"><h3>Titanic</h3><span class="price">169 SEK</span><p>Mushrooms, onion, kebab, béarnaise (half-baked)</p></div>
+        <div class="menu-item" data-lang="en"><h3>Gluten-free base</h3><span class="price">+25 SEK</span><p>Available for any pizza</p></div>
+      </div>
+    </section>
+
+    <!-- PAN PIZZA SECTION -->
+    <section id="pan-pizza" class="menu-section">
+      <div class="section-head">
+        <h2 class="section-title">Pan Pizza</h2>
+        <span class="section-badge">189 SEK</span>
+      </div>
+      <div class="menu-grid">
+        <div class="menu-item" data-lang="en"><h3>California</h3><span class="price">189 SEK</span><p>Chicken, salami, pesto, mozzarella, olives</p></div>
+        <div class="menu-item" data-lang="en"><h3>Texas</h3><span class="price">189 SEK</span><p>Ham, salami, paprika, corn, nachos, meat sauce (spicy)</p></div>
+        <div class="menu-item" data-lang="en"><h3>Miami</h3><span class="price">189 SEK</span><p>Beef, chicken, paprika, tomato, gorgonzola, garlic, olives</p></div>
+        <div class="menu-item" data-lang="en"><h3>Karlskrona</h3><span class="price">189 SEK</span><p>Beef, mushrooms, paprika, tomatoes, garlic cheese</p></div>
+      </div>
+    </section>
+
+    <!-- PASTA SECTION -->
+    <section id="pasta" class="menu-section">
+      <div class="section-head">
+        <h2 class="section-title">Pasta</h2>
+        <span class="section-badge">Homemade Pasta - 189 SEK</span>
+      </div>
+      <div class="menu-grid">
+        <div class="menu-item" data-lang="en"><h3>Pasta Speciale</h3><span class="price">189 SEK</span><p>Salami, paprika, mushroom, onion, tomato, gorgonzola (spicy)</p></div>
+        <div class="menu-item" data-lang="en"><h3>Gorgonzola</h3><span class="price">189 SEK</span><p>Paprika, mushroom, onion, cream, gorgonzola, beef</p></div>
+        <div class="menu-item" data-lang="en"><h3>Frutti di Mare</h3><span class="price">189 SEK</span><p>Shrimp, crab sticks, mussels, tuna, tomato & cheese sauce</p></div>
+        <div class="menu-item" data-lang="en"><h3>Arrabbiata</h3><span class="price">189 SEK</span><p>Paprika, chili, feta cheese, olives, garlic, tomato sauce (spicy)</p></div>
+        <div class="menu-item" data-lang="en"><h3>Al Salmone</h3><span class="price">189 SEK</span><p>Salmon, cream, spinach</p></div>
+        <div class="menu-item" data-lang="en"><h3>Bolognese</h3><span class="price">189 SEK</span><p>Meat sauce and cheese</p></div>
+        <div class="menu-item" data-lang="en"><h3>Lasagna</h3><span class="price">189 SEK</span><p>Meat sauce</p></div>
+        <div class="menu-item" data-lang="en"><h3>Chicken Pasta</h3><span class="price">189 SEK</span><p>Chicken, cream, curry sauce</p></div>
+      </div>
+    </section>
+
+    <!-- STARTERS SECTION -->
+    <section id="starters" class="menu-section">
+      <div class="section-head">
+        <h2 class="section-title">Starters</h2>
+        <span class="section-badge">Appetizers</span>
+      </div>
+      <div class="menu-grid">
+        <div class="menu-item" data-lang="en"><h3>Antipasti Rustico</h3><span class="price">85 SEK</span><p>Garlic cheese and salami</p></div>
+        <div class="menu-item" data-lang="en"><h3>Suppa Al Funghi</h3><span class="price">85 SEK</span><p>Creamy mushroom soup with cream and bread</p></div>
+        <div class="menu-item" data-lang="en"><h3>Gratinated Snails Provençal</h3><span class="price">85 SEK</span><p>Gratinated snails with garlic cheese</p></div>
+      </div>
+    </section>
+
+    <!-- MAIN COURSES SECTION -->
+    <section id="main-courses" class="menu-section">
+      <div class="section-head">
+        <h2 class="section-title">À la Carte</h2>
+        <span class="section-badge">Main Courses</span>
+      </div>
+      <div class="menu-grid">
+        <div class="menu-item" data-lang="en"><h3>Kebab Plate</h3><span class="price">169 SEK</span><p>Kebab, fries, vegetables, sauce</p></div>
+        <div class="menu-item" data-lang="en"><h3>Breaded Plaice Fillet</h3><span class="price">200 SEK</span><p>Wedge potatoes, vegetables, remoulade sauce</p></div>
+        <div class="menu-item" data-lang="en"><h3>Sirloin Steak or Chicken Fillet</h3><span class="price">249 SEK</span><p>Wedge potatoes, vegetables, béarnaise sauce</p></div>
+        <div class="menu-item" data-lang="en"><h3>Chicken Shish</h3><span class="price">249 SEK</span><p>Baked potatoes, tzatziki</p></div>
+        <div class="menu-item" data-lang="en"><h3>Bistecca – Sirloin Steak</h3><span class="price">269 SEK</span><p>Fried potatoes, mushrooms, onions, creamy parmesan gorgonzola sauce</p></div>
+        <div class="menu-item" data-lang="en"><h3>Sirloin Plank Steak</h3><span class="price">269 SEK</span><p>Oven-grilled mash, fried vegetables, fruit, béarnaise sauce</p></div>
+        <div class="menu-item" data-lang="en"><h3>Chicken Plank Steak</h3><span class="price">269 SEK</span><p>Oven-grilled mash, fried vegetables, fruit, béarnaise sauce</p></div>
+        <div class="menu-item" data-lang="en"><h3>Salmon Plank Steak</h3><span class="price">269 SEK</span><p>Oven-grilled mash, fried vegetables, fruit, remoulade sauce</p></div>
+        <div class="menu-item" data-lang="en"><h3>Oumph Plank – Vegan</h3><span class="price">269 SEK</span><p>Oven-grilled mash, vegetables, vegan sauce</p></div>
+      </div>
+    </section>
+
+    <!-- SALADS SECTION -->
+    <section id="salads" class="menu-section">
+      <div class="section-head">
+        <h2 class="section-title">Salads</h2>
+        <span class="section-badge">Fresh & Healthy - 189 SEK</span>
+      </div>
+      <div class="menu-grid">
+        <div class="menu-item" data-lang="en"><h3>Italian Feta Cheese Salad</h3><span class="price">189 SEK</span><p>Fresh vegetables, dressing, tomato, red onion, cucumber, olives, fruit</p></div>
+        <div class="menu-item" data-lang="en"><h3>Chicken Salad</h3><span class="price">189 SEK</span><p>Fresh vegetables, dressing, tomato, red onion, cucumber, olives, fruit</p></div>
+        <div class="menu-item" data-lang="en"><h3>Shrimp Salad</h3><span class="price">189 SEK</span><p>Fresh vegetables, dressing, tomato, red onion, cucumber, olives, fruit</p></div>
+        <div class="menu-item" data-lang="en"><h3>Kebab Salad</h3><span class="price">189 SEK</span><p>Fresh vegetables, dressing, tomato, red onion, cucumber, olives, fruit</p></div>
+        <div class="menu-item" data-lang="en"><h3>Halloumi Salad</h3><span class="price">189 SEK</span><p>Fresh vegetables, dressing, tomato, red onion, cucumber, olives, fruit</p></div>
+        <div class="menu-item" data-lang="en"><h3>Tuna Salad</h3><span class="price">189 SEK</span><p>Fresh vegetables, dressing, tomato, red onion, cucumber, olives, fruit</p></div>
+        <div class="menu-item" data-lang="en"><h3>Goat Cheese Salad</h3><span class="price">189 SEK</span><p>Fresh vegetables, dressing, tomato, red onion, cucumber, olives, fruit</p></div>
+        <div class="menu-item" data-lang="en"><h3>Parmesan Cheese & Parmesan Ham Salad</h3><span class="price">189 SEK</span><p>Fresh vegetables, dressing, tomato, red onion, cucumber, olives, fruit</p></div>
+      </div>
+    </section>
+
+    <!-- DESSERTS SECTION -->
+    <section id="desserts" class="menu-section">
+      <div class="section-head">
+        <h2 class="section-title">Desserts</h2>
+        <span class="section-badge">Sweet Endings - 85 SEK</span>
+      </div>
+      <div class="menu-grid">
+        <div class="menu-item" data-lang="en"><h3>Coppa Amaretto</h3><span class="price">85 SEK</span><p>Vanilla ice cream, almonds, liquor</p></div>
+        <div class="menu-item" data-lang="en"><h3>Fried Banana</h3><span class="price">85 SEK</span><p>Vanilla ice cream, whipped cream, strawberry sauce</p></div>
+        <div class="menu-item" data-lang="en"><h3>Carrot Cake</h3><span class="price">85 SEK</span><p>Vanilla ice cream and whipped cream</p></div>
+        <div class="menu-item" data-lang="en"><h3>Tiramisu</h3><span class="price">85 SEK</span><p>Classic Italian dessert</p></div>
+        <div class="menu-item" data-lang="en"><h3>Gelato</h3><span class="price">85 SEK</span><p>Italian ice cream</p></div>
+      </div>
+    </section>
+
+    <!--children -->
+    <section id="children" class="menu-section">
+      <div class="section-head">
+        <h2 class="section-title">Children</h2>
+        <span class="section-badge">Special Kids Menu - 85 SEK</span>
+      </div>
+      <div class="menu-grid">
+        <div class="menu-item" data-lang="en"><h3>Kids Pasta with Meat Sauce</h3><span class="price">85 SEK</span><p>Delicious pasta with meat sauce, perfect for little ones</p></div>
+        <div class="menu-item" data-lang="en"><h3>Kids Meatballs with Fries</h3><span class="price">85 SEK</span><p> Juicy meatballs served with crispy fries</p></div>
+        <div class="menu-item" data-lang="en"><h3>Kids Pancakes with Jam</h3><span class="price">85 SEK</span><p>Fluffy pancakes topped with strawberry jam and whipped cream</p></div>
+      </div>
+    </section>
+
+    <!-- DRINKS SECTION -->
+    <section id="drinks" class="menu-section">
+      <div class="section-head">
+        <h2 class="section-title">Drinks</h2>
+        <span class="section-badge">Beverages</span>
+      </div>
+      <div class="drinks-categories">
+        <button class="category-btn" data-category="beer-cider">🍺 Beer & Cider</button>
+        <button class="category-btn" data-category="soft-drinks">🥤 Soft Drinks</button>
+        <button class="category-btn" data-category="wine">🍷 Wine</button>
+        <button class="category-btn" data-category="cocktails-spirits">🍹 Cocktails</button>
+        <button class="category-btn" data-category="hot-drinks">☕ Hot Drinks</button>
+        <button class="category-btn" data-category="coffee-drinks">☕ Coffee Drinks</button>
+      </div>
+
+      <!-- BEER & CIDER -->
+      <section id="beer-cider" class="menu-subsection" hidden>
+        <h2>Beer & Cider</h2>
+        <div class="drinks-list">
+          <div class="drink-row"><span>Non-alcoholic Beer</span><span>45 SEK</span></div>
+          <div class="drink-row"><span>Norrlands Guld Draft (0.4L)</span><span>85 SEK</span></div>
+          <div class="drink-row"><span>Mariestads Export (0.5L)</span><span>95 SEK</span></div>
+          <div class="drink-row"><span>Mariestads OLD OX (0.5L)</span><span>95 SEK</span></div>
+          <div class="drink-row"><span>Heineken Lager (0.33L)</span><span>75 SEK</span></div>
+          <div class="drink-row"><span>Karlovacko, Croatia (0.5L)</span><span>95 SEK</span></div>
+          <div class="drink-row"><span>Bernard Light, Czech (0.5L)</span><span>95 SEK</span></div>
+          <div class="drink-row"><span>Bernard Dark, Czech (0.5L)</span><span>95 SEK</span></div>
+          <div class="drink-row"><span>Brutal Brewing IPA</span><span>75 SEK</span></div>
+          <div class="drink-row"><span>Smirnoff Ice (0.33L)</span><span>95 SEK</span></div>
+        </div>
+      </section>
+
+      <!-- SOFT DRINKS -->
+      <section id="soft-drinks" class="menu-subsection" hidden>
+        <h2>Soft Drinks</h2>
+        <div class="drinks-list">
+          <div class="drink-row"><span>Water (Pepsi)</span><span>35 SEK</span></div>
+          <div class="drink-row"><span>Mineral Water (Pepsi Max)</span><span>35 SEK</span></div>
+          <div class="drink-row"><span>7-Up</span><span>35 SEK</span></div>
+          <div class="drink-row"><span>Ice Tea</span><span>49 SEK</span></div>
+          <div class="drink-row"><span>Juice (7-Ingo)</span><span>35 SEK</span></div>
+        </div>
+      </section>
+
+      <!-- WINE -->
+      <section id="wine" class="menu-subsection" hidden>
+        <h2>Wine</h2>
+        <div class="drinks-list">
+          <div class="drink-row"><span>House Wine, Mc Pherson (glass)</span><span>85 SEK</span></div>
+          <div class="drink-row"><span>House Wine, Mc Pherson (carafe)</span><span>170 SEK</span></div>
+          <div class="drink-row"><span>Mc Pherson Shiraz, Australia</span><span>400 SEK</span></div>
+          <div class="drink-row"><span>Coto Vintage Crianza, Spain</span><span>450 SEK</span></div>
+          <div class="drink-row"><span>Chardonnay, Australia (dry white)</span><span>340 SEK</span></div>
+          <div class="drink-row"><span>Cono Sur Viognier, Chile</span><span>380 SEK</span></div>
+          <div class="drink-row"><span>Cato Mayor Rosé, Spain</span><span>340 SEK</span></div>
+        </div>
+      </section>
+
+      <!-- COCKTAILS & SPIRITS -->
+      <section id="cocktails-spirits" class="menu-subsection" hidden>
+        <h2>Cocktails & Spirits</h2>
+        <div class="drinks-list">
+          <div class="drink-row"><span>Strawberry Spritz (5cl)</span><span>139 SEK</span></div>
+          <div class="drink-row"><span>Mango Spritz (5cl)</span><span>139 SEK</span></div>
+          <div class="drink-row"><span>Limoncello Spritz (5cl)</span><span>139 SEK</span></div>
+          <div class="drink-row"><span>Prosecco (5cl)</span><span>139 SEK</span></div>
+          <div class="drink-row"><span>Aperol Spritz (5cl)</span><span>139 SEK</span></div>
+          <div class="drink-row"><span>Gin & Tonic (5cl)</span><span>139 SEK</span></div>
+          <div class="drink-row"><span>Rum & Cola (5cl)</span><span>139 SEK</span></div>
+          <div class="drink-row"><span>Vodka Red Bull (5cl)</span><span>139 SEK</span></div>
+          <div class="drink-row"><span>Mojito (5cl)</span><span>139 SEK</span></div>
+          <div class="drink-row"><span>Strawberry Daiquiri (5cl)</span><span>139 SEK</span></div>
+        </div>
+      </section>
+
+      <!-- HOT DRINKS -->
+      <section id="hot-drinks" class="menu-subsection" hidden>
+        <h2>Hot Drinks</h2>
+        <div class="drinks-list">
+          <div class="drink-row"><span>Tea</span><span>35 SEK</span></div>
+          <div class="drink-row"><span>Black Coffee</span><span>35 SEK</span></div>
+          <div class="drink-row"><span>Cappuccino</span><span>45 SEK</span></div>
+          <div class="drink-row"><span>Caffè Latte</span><span>45 SEK</span></div>
+          <div class="drink-row"><span>Espresso</span><span>40 SEK</span></div>
+        </div>
+      </section>
+
+      <!-- COFFEE DRINKS -->
+      <section id="coffee-drinks" class="menu-subsection" hidden>
+        <h2>Coffee Drinks</h2>
+        <div class="drinks-list">
+          <div class="drink-row"><span>Coffee Karlsson (Baileys & Cointreau, 4cl)</span><span>99 SEK</span></div>
+          <div class="drink-row"><span>Coffee Karlsson (Baileys & Cointreau, 6cl)</span><span>129 SEK</span></div>
+          <div class="drink-row"><span>Irish Coffee (Irish Whiskey, 4cl)</span><span>99 SEK</span></div>
+          <div class="drink-row"><span>Irish Coffee (Irish Whiskey, 6cl)</span><span>129 SEK</span></div>
+          <div class="drink-row"><span>Italian Coffee (Galliano, 4cl)</span><span>99 SEK</span></div>
+          <div class="drink-row"><span>Italian Coffee (Galliano, 6cl)</span><span>129 SEK</span></div>
+          <div class="drink-row"><span>French Coffee (Cognac, 4cl)</span><span>99 SEK</span></div>
+          <div class="drink-row"><span>French Coffee (Cognac, 6cl)</span><span>129 SEK</span></div>
+        </div>
+      </section>
+    </section>
+
+    <section class="contact" id="contact">
       <div>
-        <h1 class="text-3xl font-black">SORRENTO</h1>
-        <p class="text-sm text-red-100">Restaurant & Pizzeria</p>
+        <p class="eyebrow">Contact</p>
+        <h2>Visit Sorrento</h2>
       </div>
-
-      <div class="hidden md:flex gap-6 font-semibold">
-        <a href="#pizza" class="hover:text-orange-300">Pizza</a>
-        <a href="#pasta" class="hover:text-orange-300">Pasta</a>
-        <a href="#salads" class="hover:text-orange-300">Salads</a>
-        <a href="#desserts" class="hover:text-orange-300">Desserts</a>
-        <a href="#contact" class="hover:text-orange-300">Contact</a>
+      <div class="contact-grid">
+        <div><span>Address</span><strong>Borgmästaregatan 24, 371 34 Karlskrona</strong></div>
+        <div><span>Phone</span><strong>0455-811 01</strong></div>
+        <div><span>Website</span><strong>sorrentokarlskrona.se</strong></div>
+        <div><span>Price range</span><strong>100–200 kr per person</strong></div>
+        <div><span>Plus Code</span><strong>5H7J+2W Karlskrona</strong></div>
+        <div><span>Opening Hours</span><strong> Mon-Fri 3–9 pm • Sat–Sun 2–9 pm</strong></div>
       </div>
-    </div>
-  </nav>
+    </section>
+  </main>
 
-  <!-- HERO -->
-  <section class="hero-bg min-h-screen flex items-center justify-center text-white text-center px-6">
-    <div>
-      <h1 class="text-6xl md:text-8xl font-black tracking-wide">
-        SORRENTO
-      </h1>
-
-      <p class="mt-4 text-2xl italic">
-        Authentic Italian Restaurant Since 1975
-      </p>
-
-      <p class="max-w-2xl mx-auto mt-6 text-lg text-stone-200">
-        Enjoy handcrafted pizzas, pasta, salads, desserts,
-        and authentic Italian flavors in Karlskrona.
-      </p>
-
-      <div class="mt-10 flex flex-wrap justify-center gap-4">
-        <a href="#pizza"
-          class="bg-orange-500 hover:bg-orange-600 px-8 py-4 rounded-2xl text-lg font-bold transition">
-          View Menu
-        </a>
-
-        <a href="#contact"
-          class="border border-white hover:bg-white hover:text-black px-8 py-4 rounded-2xl text-lg font-bold transition">
-          Contact Us
-        </a>
+  <!-- DRINK MODAL -->
+  <div id="drink-modal" class="modal" hidden>
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="close-modal" aria-label="Close">&times;</button>
+      <div class="modal-body">
+        <h2 id="modal-drink-name"></h2>
+        <div class="modal-price" id="modal-drink-price"></div>
+        <p id="modal-drink-details"></p>
+        <button class="button-primary" id="order-btn">Order Now</button>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- QR SECTION -->
-  <section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
-
-      <div>
-        <h2 class="text-5xl font-black text-red-900">
-          Digital QR Menu
-        </h2>
-
-        <p class="mt-6 text-lg text-stone-600 leading-relaxed">
-          Scan the QR code to access our digital menu instantly.
-          Perfect for dine-in customers and takeaway orders.
-        </p>
-
-        <div class="mt-8 bg-stone-100 p-6 rounded-3xl">
-          <p class="font-bold text-lg">Website URL:</p>
-          <p class="text-red-700 break-all">
-            https://sorrentokarlskrona.se
-          </p>
-        </div>
-      </div>
-
-      <div class="flex justify-center">
-        <div class="w-72 h-72 bg-stone-200 rounded-3xl border-4 border-dashed border-stone-500 flex items-center justify-center">
-          <div class="text-center">
-            <div class="text-7xl">▣</div>
-            <p class="mt-4 font-bold text-lg">QR CODE</p>
-            <p class="text-sm text-stone-600">
-              Replace with generated QR image
-            </p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- PIZZA -->
-  <section id="pizza" class="py-20">
-    <div class="max-w-7xl mx-auto px-6">
-
-      <div class="flex flex-wrap justify-between items-center gap-4 mb-12">
-        <h2 class="text-5xl font-black text-red-900">
-          Pizza Menu
-        </h2>
-
-        <span class="bg-red-900 text-white px-6 py-3 rounded-full font-bold">
-          Classic Italian Pizzas
-        </span>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-        <!-- CARD -->
-        <div class="menu-card bg-white p-8 rounded-3xl shadow-xl transition duration-300">
-          <div class="flex justify-between">
-            <h3 class="text-2xl font-black text-red-900">Vezuvio</h3>
-            <span class="font-bold">149 SEK</span>
-          </div>
-          <p class="mt-4 text-stone-600">
-            Ham and cheese
-          </p>
-        </div>
-
-        <div class="menu-card bg-white p-8 rounded-3xl shadow-xl transition duration-300">
-          <div class="flex justify-between">
-            <h3 class="text-2xl font-black text-red-900">Margherita</h3>
-            <span class="font-bold">149 SEK</span>
-          </div>
-          <p class="mt-4 text-stone-600">
-            Cheese pizza
-          </p>
-        </div>
-
-        <div class="menu-card bg-white p-8 rounded-3xl shadow-xl transition duration-300">
-          <div class="flex justify-between">
-            <h3 class="text-2xl font-black text-red-900">Ciao Ciao</h3>
-            <span class="font-bold">169 SEK</span>
-          </div>
-          <p class="mt-4 text-stone-600">
-            Beef, onion, mushrooms, tomatoes, béarnaise sauce
-          </p>
-        </div>
-
-        <div class="menu-card bg-white p-8 rounded-3xl shadow-xl transition duration-300">
-          <div class="flex justify-between">
-            <h3 class="text-2xl font-black text-red-900">Kebab Pizza</h3>
-            <span class="font-bold">169 SEK</span>
-          </div>
-          <p class="mt-4 text-stone-600">
-            Kebab meat, vegetables and sauce
-          </p>
-        </div>
-
-        <div class="menu-card bg-white p-8 rounded-3xl shadow-xl transition duration-300">
-          <div class="flex justify-between">
-            <h3 class="text-2xl font-black text-red-900">Quattro Formaggi</h3>
-            <span class="font-bold">169 SEK</span>
-          </div>
-          <p class="mt-4 text-stone-600">
-            Mozzarella, gorgonzola, feta cheese and garlic cheese
-          </p>
-        </div>
-
-        <div class="menu-card bg-white p-8 rounded-3xl shadow-xl transition duration-300">
-          <div class="flex justify-between">
-            <h3 class="text-2xl font-black text-red-900">Pizza Salmone</h3>
-            <span class="font-bold">169 SEK</span>
-          </div>
-          <p class="mt-4 text-stone-600">
-            Salmon, spinach and garlic cheese
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- PASTA -->
-  <section id="pasta" class="bg-white py-20">
-    <div class="max-w-7xl mx-auto px-6">
-
-      <h2 class="text-5xl font-black text-orange-700 mb-12">
-        Pasta Selection
-      </h2>
-
-      <div class="grid md:grid-cols-2 gap-8">
-
-        <div class="bg-stone-50 p-8 rounded-3xl shadow-lg">
-          <div class="flex justify-between">
-            <h3 class="text-2xl font-black">Pasta Speciale</h3>
-            <span class="font-bold">189 SEK</span>
-          </div>
-
-          <p class="mt-4 text-stone-600">
-            Salami, paprika, mushrooms, onion and gorgonzola sauce
-          </p>
-        </div>
-
-        <div class="bg-stone-50 p-8 rounded-3xl shadow-lg">
-          <div class="flex justify-between">
-            <h3 class="text-2xl font-black">Frutti di Mare</h3>
-            <span class="font-bold">189 SEK</span>
-          </div>
-
-          <p class="mt-4 text-stone-600">
-            Shrimp, mussels, tuna, tomato sauce and cheese sauce
-          </p>
-        </div>
-
-        <div class="bg-stone-50 p-8 rounded-3xl shadow-lg">
-          <div class="flex justify-between">
-            <h3 class="text-2xl font-black">Al Salmone</h3>
-            <span class="font-bold">189 SEK</span>
-          </div>
-
-          <p class="mt-4 text-stone-600">
-            Salmon, cream and spinach
-          </p>
-        </div>
-
-        <div class="bg-stone-50 p-8 rounded-3xl shadow-lg">
-          <div class="flex justify-between">
-            <h3 class="text-2xl font-black">Chicken Pasta</h3>
-            <span class="font-bold">189 SEK</span>
-          </div>
-
-          <p class="mt-4 text-stone-600">
-            Chicken with creamy curry sauce
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- SALADS -->
-  <section id="salads" class="py-20">
-    <div class="max-w-7xl mx-auto px-6">
-
-      <h2 class="text-5xl font-black text-green-700 mb-12">
-        Fresh Salads
-      </h2>
-
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-
-        <div class="bg-green-50 p-8 rounded-3xl shadow-lg text-center">
-          <h3 class="text-2xl font-black">Chicken Salad</h3>
-          <p class="mt-4 text-green-700 font-bold">189 SEK</p>
-        </div>
-
-        <div class="bg-green-50 p-8 rounded-3xl shadow-lg text-center">
-          <h3 class="text-2xl font-black">Halloumi Salad</h3>
-          <p class="mt-4 text-green-700 font-bold">189 SEK</p>
-        </div>
-
-        <div class="bg-green-50 p-8 rounded-3xl shadow-lg text-center">
-          <h3 class="text-2xl font-black">Shrimp Salad</h3>
-          <p class="mt-4 text-green-700 font-bold">189 SEK</p>
-        </div>
-
-        <div class="bg-green-50 p-8 rounded-3xl shadow-lg text-center">
-          <h3 class="text-2xl font-black">Kebab Salad</h3>
-          <p class="mt-4 text-green-700 font-bold">189 SEK</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- DESSERTS -->
-  <section id="desserts" class="bg-stone-900 text-white py-20">
-
-    <div class="max-w-7xl mx-auto px-6">
-
-      <h2 class="text-5xl font-black mb-12">
-        Desserts
-      </h2>
-
-      <div class="grid md:grid-cols-5 gap-6">
-
-        <div class="bg-white/10 p-6 rounded-3xl">
-          <h3 class="text-2xl font-black">Tiramisu</h3>
-          <p class="mt-4 text-orange-300 font-bold">85 SEK</p>
-        </div>
-
-        <div class="bg-white/10 p-6 rounded-3xl">
-          <h3 class="text-2xl font-black">Gelato</h3>
-          <p class="mt-4 text-orange-300 font-bold">85 SEK</p>
-        </div>
-
-        <div class="bg-white/10 p-6 rounded-3xl">
-          <h3 class="text-2xl font-black">Coppa Amaretto</h3>
-          <p class="mt-4 text-orange-300 font-bold">85 SEK</p>
-        </div>
-
-        <div class="bg-white/10 p-6 rounded-3xl">
-          <h3 class="text-2xl font-black">Carrot Cake</h3>
-          <p class="mt-4 text-orange-300 font-bold">85 SEK</p>
-        </div>
-
-        <div class="bg-white/10 p-6 rounded-3xl">
-          <h3 class="text-2xl font-black">Fried Banana</h3>
-          <p class="mt-4 text-orange-300 font-bold">85 SEK</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- SOCIAL MEDIA POSTERS -->
-  <section class="py-20 bg-white">
-
-    <div class="max-w-7xl mx-auto px-6">
-
-      <h2 class="text-5xl font-black text-center mb-16">
-        Social Media Posters
-      </h2>
-
-      <div class="grid lg:grid-cols-3 gap-10">
-
-        <div class="rounded-[2rem] p-10 text-white bg-gradient-to-br from-red-700 to-orange-500 shadow-2xl">
-          <p class="uppercase tracking-widest text-sm">
-            Friday Special
-          </p>
-
-          <h3 class="text-5xl font-black mt-6">
-            Pizza Night
-          </h3>
-
-          <p class="mt-6 text-lg">
-            Authentic Italian pizzas with crispy edges and fresh toppings.
-          </p>
-
-          <div class="mt-10 text-6xl font-black">
-            149:-
-          </div>
-        </div>
-
-        <div class="rounded-[2rem] p-10 text-white bg-gradient-to-br from-green-700 to-emerald-500 shadow-2xl">
-          <p class="uppercase tracking-widest text-sm">
-            Healthy Choice
-          </p>
-
-          <h3 class="text-5xl font-black mt-6">
-            Fresh Salads
-          </h3>
-
-          <p class="mt-6 text-lg">
-            Fresh vegetables and premium ingredients every day.
-          </p>
-
-          <div class="mt-10 text-6xl font-black">
-            189:-
-          </div>
-        </div>
-
-        <div class="rounded-[2rem] p-10 text-white bg-gradient-to-br from-stone-900 to-stone-700 shadow-2xl">
-          <p class="uppercase tracking-widest text-sm">
-            Dessert Time
-          </p>
-
-          <h3 class="text-5xl font-black mt-6">
-            Tiramisu
-          </h3>
-
-          <p class="mt-6 text-lg">
-            Homemade Italian dessert served fresh every day.
-          </p>
-
-          <div class="mt-10 text-6xl font-black">
-            85:-
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="bg-red-950 text-white py-20">
-
-    <div class="max-w-5xl mx-auto px-6 text-center">
-
-      <h2 class="text-5xl font-black">
-        Visit Sorrento
-      </h2>
-
-      <p class="mt-6 text-xl text-red-100">
-        Restaurant & Pizzeria in Karlskrona
-      </p>
-
-      <div class="grid md:grid-cols-3 gap-8 mt-14">
-
-        <div class="bg-white/10 p-8 rounded-3xl">
-          <h3 class="text-2xl font-black">Address</h3>
-          <p class="mt-4 text-red-100">
-            Karlskrona, Sweden
-          </p>
-        </div>
-
-        <div class="bg-white/10 p-8 rounded-3xl">
-          <h3 class="text-2xl font-black">Phone</h3>
-          <p class="mt-4 text-red-100">
-            +46 XX XXX XX XX
-          </p>
-        </div>
-
-        <div class="bg-white/10 p-8 rounded-3xl">
-          <h3 class="text-2xl font-black">Opening Hours</h3>
-          <p class="mt-4 text-red-100">
-            Daily: 11:00 - 22:00
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="bg-black text-white py-10 text-center">
-    <h2 class="text-3xl font-black">
-      SORRENTO
-    </h2>
-
-    <p class="mt-3 text-stone-400">
-      Restaurant & Pizzeria • Since 1975
-    </p>
-
-    <p class="mt-6 text-stone-500 text-sm">
-      Modern restaurant website built from the restaurant menu.
-    </p>
+  <footer class="site-footer">
+    <p>Sorrento Restaurant & Pizzeria • Since 1975</p>
   </footer>
 
+  <script src="assets/js/english_full.js"></script>
+  <script src="assets/js/app.js"></script>
 </body>
 </html>
