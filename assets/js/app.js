@@ -18,6 +18,49 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuByLanguage = { en: englishMenu, sv: swedishMenu, de: germanMenu, pl: polishMenu };
   const languages = ['en', 'sv', 'de', 'pl'];
 
+  const navItems = [
+    {
+      href: '#pizza',
+      label: { en: 'Pizza', sv: 'Pizza', de: 'Pizza', pl: 'Pizza' }
+    },
+    {
+      href: '#pan-pizza',
+      label: { en: 'Pan Pizza', sv: 'Pan Pizza', de: 'Pan Pizza', pl: 'Pan Pizza' }
+    },
+    {
+      href: '#pasta',
+      label: { en: 'Pasta', sv: 'Pasta', de: 'Pasta', pl: 'Makaron' }
+    },
+    {
+      href: '#starters',
+      label: { en: 'Starters', sv: 'Forratter', de: 'Vorspeisen', pl: 'Przystawki' }
+    },
+    {
+      href: '#main-courses',
+      label: { en: 'Main Courses', sv: 'Huvudratter', de: 'Hauptgange', pl: 'Dania glowne' }
+    },
+    {
+      href: '#salads',
+      label: { en: 'Salads', sv: 'Sallader', de: 'Salate', pl: 'Salatki' }
+    },
+    {
+      href: '#desserts',
+      label: { en: 'Desserts', sv: 'Dessert', de: 'Desserts', pl: 'Desery' }
+    },
+    {
+      href: '#children',
+      label: { en: 'Children', sv: 'Barnmeny', de: 'Kinder', pl: 'Dzieci' }
+    },
+    {
+      href: '#drinks',
+      label: { en: 'Drinks', sv: 'Dryck', de: 'Getranke', pl: 'Napoje' }
+    },
+    {
+      href: '#contact',
+      label: { en: 'Contact', sv: 'Kontakt', de: 'Kontakt', pl: 'Kontakt' }
+    }
+  ];
+
   const sectionConfig = {
     pizza: {
       title: { en: 'Pizza Menu', sv: 'Pizzor', de: 'Pizzamenü', pl: 'Menu Pizzy' },
@@ -177,11 +220,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
+  const renderNav = (language) => {
+    nav.innerHTML = navItems
+      .map((item) => `<a href="${item.href}">${t(item.label, language) || t(item.label, 'en')}</a>`)
+      .join('');
+
+    nav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('open');
+        nav.setAttribute('hidden', '');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  };
+
   let currentLanguage = 'en';
   let drinkGroups = groupItems(currentLanguage);
 
   const setLanguage = (language) => {
     currentLanguage = language;
+    renderNav(language);
     renderSection('pizza', language);
     renderSection('pan-pizza', language);
     renderSection('pasta', language);
@@ -215,14 +273,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   toggle.addEventListener('click', () => {
     const isOpen = nav.classList.toggle('open');
+    if (isOpen) {
+      nav.removeAttribute('hidden');
+    } else {
+      nav.setAttribute('hidden', '');
+    }
     toggle.setAttribute('aria-expanded', String(isOpen));
-  });
-
-  nav.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => {
-      nav.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-    });
   });
 
   const openCategoryModal = (categoryKey) => {
