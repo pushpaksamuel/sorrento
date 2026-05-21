@@ -119,6 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: { en: 'Wine', sv: 'Vin', de: 'Wein', pl: 'Wino' },
       button: { en: '🍷 Wine', sv: '🍷 Vin', de: '🍷 Wein', pl: '🍷 Wino' },
       dataKeys: [
+        { key: 'houseWine', label: { en: 'House Wine', sv: 'Husets vin', de: 'Hauswein', pl: 'Wino domowe' } },
         { key: 'redWine', label: { en: 'Red Wine', sv: 'Rött Vin', de: 'Rotwein', pl: 'Czerwone Wino' } },
         { key: 'whiteWine', label: { en: 'White Wine', sv: 'Vitt Vin', de: 'Weißwein', pl: 'Białe Wino' } },
         { key: 'roseWine', label: { en: 'Rosé Wine', sv: 'Rosévin', de: 'Roséwein', pl: 'Wino Różowe' } }
@@ -148,6 +149,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // return first available value
     const keys = Object.keys(obj);
     return keys.length ? obj[keys[0]] : undefined;
+  };
+
+  const houseWineBannerText = {
+    en: 'House wine Mc Pherson — glass 85 SEK, carafe 170 SEK',
+    sv: 'Husets vin Mc Pherson — glas 85 SEK, karaff 170 SEK',
+    de: 'Hauswein Mc Pherson — Glas 85 SEK, Karaffe 170 SEK',
+    pl: 'Wino domowe Mc Pherson — kieliszek 85 SEK, karafka 170 SEK'
   };
 
   const sectionItemTemplate = (name, description, price) => `
@@ -240,6 +248,9 @@ document.addEventListener('DOMContentLoaded', () => {
       languageToggle.textContent = language.toUpperCase();
       languageToggle.setAttribute('aria-label', `Switch language. Current: ${language.toUpperCase()}`);
     }
+
+    const bannerEl = document.querySelector('.house-wine-banner');
+    if (bannerEl) bannerEl.textContent = houseWineBannerText[language] || houseWineBannerText.en;
 
     document.documentElement.lang = language;
 

@@ -99,10 +99,13 @@ window.sorrento_menu_de = {
   ],
 
   redWine: [
-    ["Hauswein Mc Pherson (Glas)","Glas",85],
-    ["Hauswein Mc Pherson (Karaffe)","Karaffe",170],
     ["Mc Pherson Shiraz","Australien",400],
     ["Coto Vintage Crianza","Spanien",450]
+  ],
+
+  houseWine: [
+    ["Hauswein Mc Pherson (Glas)","Glas",85],
+    ["Hauswein Mc Pherson (Karaffe)","Karaffe",170]
   ],
 
   whiteWine: [

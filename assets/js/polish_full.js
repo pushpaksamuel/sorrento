@@ -99,10 +99,13 @@ window.sorrento_menu_pl = {
   ],
 
   redWine: [
-    ["Wino domowe Mc Pherson (kieliszek)","kieliszek",85],
-    ["Wino domowe Mc Pherson (karafka)","karafka",170],
     ["Mc Pherson Shiraz","Australia",400],
     ["Coto Vintage Crianza","Hiszpania",450]
+  ],
+
+  houseWine: [
+    ["Wino domowe Mc Pherson (kieliszek)","kieliszek",85],
+    ["Wino domowe Mc Pherson (karafka)","karafka",170]
   ],
 
   whiteWine: [
