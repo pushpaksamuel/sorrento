@@ -55,10 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
       href: '#drinks',
       label: { en: 'Drinks', sv: 'Dryck', de: 'Getranke', pl: 'Napoje' }
     },
-    {
-      href: '#contact',
-      label: { en: 'Contact', sv: 'Kontakt', de: 'Kontakt', pl: 'Kontakt' }
-    }
   ];
 
   const sectionConfig = {
@@ -272,12 +268,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   toggle.addEventListener('click', () => {
+    if (!window.matchMedia('(max-width: 768px)').matches) return;
     const isOpen = nav.classList.toggle('open');
-    if (isOpen) {
-      nav.removeAttribute('hidden');
-    } else {
-      nav.setAttribute('hidden', '');
-    }
     toggle.setAttribute('aria-expanded', String(isOpen));
   });
 
