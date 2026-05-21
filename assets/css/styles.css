@@ -1339,6 +1339,44 @@ a {
   }
 }
 
+@media (max-width: 600px) {
+  .contact {
+    padding: 2rem 0.7rem;
+  }
+
+  .contact-grid {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.8rem;
+  }
+
+  .contact .contact-grid > .contact-column {
+    width: 100%;
+    min-width: 0;
+    padding: 1.2rem 1rem;
+    border-radius: 18px;
+  }
+
+  .contact .contact-grid > .contact-column h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .contact-list li {
+    padding: 0.62rem 0;
+  }
+
+  .contact .contact-list span {
+    font-size: 0.78rem;
+  }
+
+  .contact .contact-list a,
+  .contact .contact-grid > .contact-column p {
+    word-break: break-word;
+  }
+}
+
  .header-actions .menu-toggle {
   display: none !important;
 }
