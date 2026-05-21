@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalDrinkName = document.getElementById('modal-drink-name');
   const modalDrinkDetails = document.getElementById('modal-drink-details');
   const orderBtn = document.getElementById('order-btn');
+  const floatingNav = document.getElementById('floating-nav');
+  const floatingNavToggle = document.getElementById('floating-nav-toggle');
+  const floatingNavPanel = document.getElementById('floating-nav-panel');
 
   if (!toggle || !nav || !languageToggle) return;
 
@@ -216,6 +219,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
+  const renderFloatingNav = (language) => {
+    if (!floatingNavPanel) return;
+    floatingNavPanel.innerHTML = navItems
+      .map((item) => `<a href="${item.href}">${t(item.label, language) || t(item.label, 'en')}</a>`)
+      .join('');
+
+    floatingNavPanel.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        floatingNavPanel.setAttribute('hidden', '');
+        if (floatingNavToggle) floatingNavToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  };
+
   const renderNav = (language) => {
     nav.innerHTML = navItems
       .map((item) => `<a href="${item.href}">${t(item.label, language) || t(item.label, 'en')}</a>`)
@@ -236,6 +253,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const setLanguage = (language) => {
     currentLanguage = language;
     renderNav(language);
+    renderFloatingNav(language);
     renderSection('pizza', language);
     renderSection('pan-pizza', language);
     renderSection('pasta', language);
@@ -272,6 +290,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const isOpen = nav.classList.toggle('open');
     toggle.setAttribute('aria-expanded', String(isOpen));
   });
+
+  if (floatingNavToggle && floatingNavPanel) {
+    floatingNavToggle.addEventListener('click', () => {
+      const isHidden = floatingNavPanel.hasAttribute('hidden');
+      if (isHidden) {
+        floatingNavPanel.removeAttribute('hidden');
+        floatingNavToggle.setAttribute('aria-expanded', 'true');
+      } else {
+        floatingNavPanel.setAttribute('hidden', '');
+        floatingNavToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
 
   const openCategoryModal = (categoryKey) => {
     const config = drinkConfig[categoryKey];
