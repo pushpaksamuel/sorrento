@@ -131,53 +131,180 @@ a {
 }
 
 .hero {
-  min-height: 72vh;
+  min-height: 100vh;
   display: grid;
   align-items: center;
-  background:
+  justify-items: center;
+  /* Use local PNG background with remote fallback */
+  background-image:
     linear-gradient(rgba(35, 31, 27, 0.58), rgba(35, 31, 27, 0.58)),
-    url('https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1600&auto=format&fit=crop') center/cover;
+    url('../background.png');
+  background-position: 0 0, center center;
+  background-size: auto, 100% 100% !important;
+  background-repeat: repeat, no-repeat;
+  background-color: var(--accent-dark);
   color: #fff;
+  text-align: center;
 }
 
 .hero-content {
-  padding: 5rem 0;
-  max-width: 760px;
+  width: min(980px, calc(100% - 2rem));
+  padding: 2rem 0 3rem;
 }
 
-.eyebrow {
+.hero-kicker {
   margin: 0;
-  font-size: 0.8rem;
+  font-size: 1.15rem;
+  letter-spacing: 0.08em;
+  font-style: italic;
+  color: #f3e0c2;
+}
+
+.hero-subtitle {
+  margin: 0.6rem 0 0;
+  font-size: 0.9rem;
   letter-spacing: 0.34em;
   text-transform: uppercase;
   color: #e8d8cd;
 }
 
-.hero h1,
-.section-heading h2,
-.contact h2 {
-  margin: 0.6rem 0 0;
-  font-size: clamp(2.8rem, 8vw, 5.8rem);
-  line-height: 0.95;
+.hero h1 {
+  margin: 0.4rem 0 0;
+  font-size: clamp(3.8rem, 10vw, 8rem);
+  left: 50%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
 }
 
 .hero-text {
-  max-width: 56ch;
-  margin: 1.3rem 0 0;
-  font-size: 1.1rem;
-  line-height: 1.7;
+  max-width: 42ch;
+  margin: 1.1rem auto 0;
+  font-size: 1rem;
+  padding: 0;
   color: rgba(255, 255, 255, 0.88);
+}
+
+.hero-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 10rem auto 0;
+}
+
+/* Chip icon and label styling */
+.chip-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.chip-icon {
+  width: 72px;
+  height: 72px;
+  display: block;
+}
+
+.chip-icon path,
+.chip-icon circle,
+.chip-icon rect,
+.chip-icon ellipse {
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.chip-label {
+  margin-top: 0.5rem;
+  color: #fff;
+  font-weight: 700;
+  text-transform: none;
+  font-size: 1rem;
+}
+
+@media (max-width: 900px) {
+  .chip-icon { width: 56px; height: 56px; }
+  .chip-label { font-size: 0.9rem; }
+}
+
+/* Position chip labels directly under the background icons (no SVGs) */
+.hero-chips {
+  /* place chips over the background icons row */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  /* position using top so we can place labels under the background icons */
+  top: 48%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: min(1280px, calc(100% - 6rem));
+  padding: 28px ;
+  z-index: 2;
+}
+
+.hero-chips .chip-item { position: static; transform: none; flex: 0 0 14%; text-align: center; padding: 28; background: transparent; border: none; }
+.hero-chips .chip-1 { position: relative; left: 18px; }
+.hero-chips .chip-2 { position: relative; left: 12px; }
+.hero-chips .chip-3 { position: relative; left: 8px; }
+.hero-chips .chip-4 { position: relative; left: 4px; }
+.hero-chips .chip-5 { position: relative; left: 0; }
+.hero-chips .chip-6 { position: relative; left: -2; }
+.hero-chips .chip-item .chip-label {
+  background: transparent;
+  padding: 0.25rem 0;
+  border-radius: 0;
+  display: inline-block;
+  border: none;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  margin-top: 1.6rem; /* push label lower under icon */
+}
+
+@media (max-width: 950px) {
+  .hero-chips { position: static; transform: none; display: flex; gap: 0.6rem; padding: 28px; bottom: auto; }
+  .hero-chips .chip-item { position: static; transform: none; flex: 0 0 auto; }
+  .hero-chips .chip-1 { position: relative; left: 18px; }
+  .hero-chips .chip-2 { position: relative; left: 12px; }
+  .hero-chips .chip-3 { position: relative; left: 8px; }
+  .hero-chips .chip-4 { position: relative; left: 4px; }
+  .hero-chips .chip-5 { position: relative; left: 0; }
+  .hero-chips .chip-6 { position: relative; left: 0; }
+  .hero-chips .chip-label { background: rgba(0,0,0,0.6); padding: 0.35rem 0.8rem; }
+}
+
+.hero-chips a {
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(0, 0, 0, 0.26);
+  color: #fff;
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hero-chips a:hover {
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .service-line {
   display: inline-flex;
   gap: 0.9rem;
-  margin: 1rem 0 0;
+  margin: 1.25rem 0 0;
   padding: 0.55rem 0.9rem;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
   font-weight: 700;
+  justify-content: center;
 }
 
 .hero-actions {
@@ -868,14 +995,20 @@ a {
 
 .hero {
   min-height: 100vh;
+  display: grid;
+  align-items: center;
   background:
-    linear-gradient(rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.68)),
-    url('https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1600&auto=format&fit=crop') center/cover;
+    linear-gradient(rgba(35, 31, 27, 0.58), rgba(35, 31, 27, 0.58)),
+    url('../background.png') center/cover no-repeat;
+  background-color: var(--accent-dark);
+  color: #fff;
 }
 
 .hero-content {
-  text-align: center;
-  margin-inline: auto;
+  text-align: left;
+  margin-inline: 0;
+  padding: 5rem 0;
+  max-width: 760px;
 }
 
 .hero h1 {
@@ -928,112 +1061,74 @@ a {
 .contact {
   background: linear-gradient(135deg, #7f1d1d 0%, #5a1313 100%);
   color: #fff;
-  padding: 5rem 1rem;
-}
-
-.contact-hero {
-  text-align: center;
-  margin-bottom: 4rem;
-  animation: fadeInDown 0.6s ease-out;
-}
-
-.contact-title {
-  font-size: clamp(2.5rem, 8vw, 3.5rem);
-  font-weight: 900;
-  color: #fff;
-  margin: 0 0 1rem 0;
-  letter-spacing: -0.02em;
-}
-
-.contact-subtitle {
-  font-size: 1.25rem;
-  color: rgba(255, 255, 255, 0.95);
-  margin: 0;
-  font-weight: 400;
-  letter-spacing: 0.02em;
+  padding: 4rem 1rem;
 }
 
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.contact-grid > .contact-card {
+.contact .contact-grid > .contact-column {
   background: rgba(139, 50, 45, 0.5);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 2.5rem 2rem;
-  border-radius: 20px;
-  text-align: center;
-  transition: all 0.3s ease;
-  animation: slideUp 0.6s ease-out backwards;
-  box-shadow: none;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 24px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.contact-grid > .contact-card:nth-child(1) { animation-delay: 0.1s; }
-.contact-grid > .contact-card:nth-child(2) { animation-delay: 0.2s; }
-.contact-grid > .contact-card:nth-child(3) { animation-delay: 0.3s; }
-.contact-grid > .contact-card:nth-child(4) { animation-delay: 0.4s; }
-.contact-grid > .contact-card:nth-child(5) { animation-delay: 0.5s; }
-.contact-grid > .contact-card:nth-child(6) { animation-delay: 0.6s; }
-
-.contact-grid > .contact-card:hover {
-  background: rgba(139, 50, 45, 0.85);
-  transform: translateY(-8px);
-  border-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-
-.contact-grid > .contact-card h3 {
-  font-size: 1.4rem;
+.contact .contact-grid > .contact-column h2 {
+  margin: 0 0 1rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: #fff;
-  margin: 0 0 1rem 0;
-  letter-spacing: 0.02em;
 }
 
-.contact-grid > .contact-card p {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.9);
-  margin: 0;
+.contact .contact-grid > .contact-column p {
+  margin: 0 0 1rem;
   line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
 }
 
-.contact-grid > .contact-card a {
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-list li {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.9rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.contact-list li:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.contact .contact-list span {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.contact .contact-list a {
   color: #fdba74;
   text-decoration: none;
   font-weight: 600;
-  transition: color 0.2s ease;
 }
 
-.contact-grid > .contact-card a:hover {
+.contact .contact-list a:hover {
   color: #fef3c7;
   text-decoration: underline;
-}
-
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .site-footer {

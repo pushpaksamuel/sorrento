@@ -13,32 +13,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const englishMenu = window.english_full || [];
   const swedishMenu = window.swedish_full || [];
-  const menuByLanguage = { en: englishMenu, sv: swedishMenu };
+  const germanMenu = window.german_full || [];
+  const polishMenu = window.polish_full || [];
+  const menuByLanguage = { en: englishMenu, sv: swedishMenu, de: germanMenu, pl: polishMenu };
+  const languages = ['en', 'sv', 'de', 'pl'];
 
   const sectionConfig = {
     pizza: {
-      title: { en: 'Pizza Menu', sv: 'Pizzor' },
-      badge: { en: 'Pizza', sv: 'Pizza' },
-      categories: { en: ['Pizza'], sv: ['Pizza'] }
+      title: { en: 'Pizza Menu', sv: 'Pizzor', de: 'Pizzamenü', pl: 'Menu Pizzy' },
+      badge: { en: 'Pizza', sv: 'Pizza', de: 'Pizza', pl: 'Pizza' },
+      categories: { en: ['Pizza'], sv: ['Pizza'], de: ['Pizza'], pl: ['Pizza'] }
     },
     'pan-pizza': {
-      title: { en: 'Pan Pizza', sv: 'Pan Pizza' },
-      badge: { en: 'Pan Pizza', sv: 'Pan Pizza' },
-      categories: { en: ['Pan Pizza'], sv: ['Pan Pizza'] }
+      title: { en: 'Pan Pizza', sv: 'Pan Pizza', de: 'Pan Pizza', pl: 'Pan Pizza' },
+      badge: { en: 'Pan Pizza', sv: 'Pan Pizza', de: 'Pan Pizza', pl: 'Pan Pizza' },
+      categories: { en: ['Pan Pizza'], sv: ['Pan Pizza'], de: ['Pan Pizza'], pl: ['Pan Pizza'] }
     },
     pasta: {
-      title: { en: 'Pasta', sv: 'Pasta' },
-      badge: { en: 'Italian Classics', sv: 'Italienska Klassiker' },
-      categories: { en: ['Pasta'], sv: ['Pasta'] }
+      title: { en: 'Pasta', sv: 'Pasta', de: 'Pasta', pl: 'Makaron' },
+      badge: { en: 'Italian Classics', sv: 'Italienska Klassiker', de: 'Italienische Klassiker', pl: 'Klasyczne Włoskie Makarony' },
+      categories: { en: ['Pasta'], sv: ['Pasta'], de: ['Pasta'], pl: ['Makaron'] }
     },
     starters: {
-      title: { en: 'Starters', sv: 'Förrätter' },
-      badge: { en: 'Appetizers', sv: 'Förrätter' },
-      categories: { en: ['Starter'], sv: ['Förrätt'] }
+      title: { en: 'Starters', sv: 'Förrätter', de: 'Vorspeisen', pl: 'Przystawki' },
+      badge: { en: 'Appetizers', sv: 'Förrätter', de: 'Vorspeisen', pl: 'Przystawki' },
+      categories: { en: ['Starter'], sv: ['Förrätt'], de: ['Starter'], pl: ['Przystawka'] }
     },
     'main-courses': {
-      title: { en: 'À la Carte', sv: 'À la Carte' },
-      badge: { en: 'Main Courses', sv: 'Huvudrätter' },
+      title: { en: 'À la Carte', sv: 'À la Carte', de: 'À la Carte', pl: 'À la Carte' },
+      badge: { en: 'Main Courses', sv: 'Huvudrätter', de: 'Hauptgänge', pl: 'Dania główne' },
       items: {
         en: [
           ['Kebab Plate', 'Kebab, fries, vegetables, sauce', 169],
@@ -65,53 +68,62 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     },
     salads: {
-      title: { en: 'Salads', sv: 'Sallader' },
-      badge: { en: 'Fresh & Healthy - 189 SEK', sv: 'Fräscht & Gott - 189 SEK' },
-      categories: { en: ['Salad'], sv: ['Sallad'] }
+      title: { en: 'Salads', sv: 'Sallader', de: 'Salate', pl: 'Sałatki' },
+      badge: { en: 'Fresh & Healthy - 189 SEK', sv: 'Fräscht & Gott - 189 SEK', de: 'Frisch & Gesund - 189 SEK', pl: 'Świeże & zdrowe - 189 SEK' },
+      categories: { en: ['Salad'], sv: ['Sallad'], de: ['Salat'], pl: ['Sałatka'] }
     },
     desserts: {
-      title: { en: 'Desserts', sv: 'Dessert' },
-      badge: { en: 'Sweet Endings - 85 SEK', sv: 'Sött avslut - 85 SEK' },
-      categories: { en: ['Dessert'], sv: ['Dessert'] }
+      title: { en: 'Desserts', sv: 'Dessert', de: 'Desserts', pl: 'Desery' },
+      badge: { en: 'Sweet Endings - 85 SEK', sv: 'Sött avslut - 85 SEK', de: 'Süßes Ende - 85 SEK', pl: 'Słodkie Zakończenie - 85 SEK' },
+      categories: { en: ['Dessert'], sv: ['Dessert'], de: ['Deser'], pl: ['Deser'] }
     },
     children: {
-      title: { en: 'Children', sv: 'Barnmeny' },
-      badge: { en: 'Special Kids Menu - 85 SEK', sv: 'Specialmeny för barn - 85 SEK' },
-      categories: { en: ['Young Guests'], sv: ['För yngre gäster'] }
+      title: { en: 'Children', sv: 'Barnmeny', de: 'Kinder', pl: 'Dzieci' },
+      badge: { en: 'Special Kids Menu - 85 SEK', sv: 'Specialmeny för barn - 85 SEK', de: 'Spezielles Kindermenü - 85 SEK', pl: 'Specjalne Menu dla Dzieci - 85 SEK' },
+      categories: { en: ['Young Guests'], sv: ['För yngre gäster'], de: ['Junge Gäste'], pl: ['Dla dzieci'] }
     }
   };
 
   const drinkConfig = {
     'beer-cider': {
-      title: { en: 'Beer & Cider', sv: 'Öl/Cider' },
-      button: { en: '🍺 Beer & Cider', sv: '🍺 Öl/Cider' },
-      categories: { en: ['Beer/Cider'], sv: ['Öl/Cider'] }
+      title: { en: 'Beer & Cider', sv: 'Öl/Cider', de: 'Bier & Apfelwein', pl: 'Piwo/Cydr' },
+      button: { en: '🍺 Beer & Cider', sv: '🍺 Öl/Cider', de: '🍺 Bier & Apfelwein', pl: '🍺 Piwo/Cydr' },
+      categories: { en: ['Beer/Cider'], sv: ['Öl/Cider'], de: ['Bier/Apfelwein'], pl: ['Piwo/Cydr'] }
     },
     'soft-drinks': {
-      title: { en: 'Soft Drinks', sv: 'Kall Dryck' },
-      button: { en: '🥤 Soft Drinks', sv: '🥤 Kall Dryck' },
-      categories: { en: ['Cold Drink'], sv: ['Kall Dryck'] }
+      title: { en: 'Soft Drinks', sv: 'Kall Dryck', de: 'Erfrischungsgetränke', pl: 'Napoje bezalkoholowe' },
+      button: { en: '🥤 Soft Drinks', sv: '🥤 Kall Dryck', de: '🥤 Erfrischungsgetränke', pl: '🥤 Napoje bezalkoholowe' },
+      categories: { en: ['Cold Drink'], sv: ['Kall Dryck'], de: ['Kaltes Getränk'], pl: ['Zimne Napoje'] }
     },
     wine: {
-      title: { en: 'Wine', sv: 'Vin' },
-      button: { en: '🍷 Wine', sv: '🍷 Vin' },
-      categories: { en: ['Red Wine', 'White Wine', 'Rose Wine'], sv: ['Rött Vin', 'Vitt Vin', 'Rosévin'] }
+      title: { en: 'Wine', sv: 'Vin', de: 'Wein', pl: 'Wino' },
+      button: { en: '🍷 Wine', sv: '🍷 Vin', de: '🍷 Wein', pl: '🍷 Wino' },
+      categories: { en: ['Red Wine', 'White Wine', 'Rose Wine'], sv: ['Rött Vin', 'Vitt Vin', 'Rosévin'], de: ['Rotwein', 'Weißwein', 'Roséwein'], pl: ['Czerwone Wino', 'Białe Wino', 'Wino Różowe'] }
     },
     'cocktails-spirits': {
-      title: { en: 'Cocktails & Spirits', sv: 'Cocktails' },
-      button: { en: '🍹 Cocktails & Spirits', sv: '🍹 Cocktails' },
-      categories: { en: ['Cocktail'], sv: ['Cocktail'] }
+      title: { en: 'Cocktails & Spirits', sv: 'Cocktails', de: 'Cocktails & Spirituosen', pl: 'Koktajle' },
+      button: { en: '🍹 Cocktails & Spirits', sv: '🍹 Cocktails', de: '🍹 Cocktails & Spirituosen', pl: '🍹 Koktajle' },
+      categories: { en: ['Cocktail'], sv: ['Cocktail'], de: ['Cocktail'], pl: ['Koktajl'] }
     },
     'hot-drinks': {
-      title: { en: 'Hot Drinks', sv: 'Varm Dryck' },
-      button: { en: '☕ Hot Drinks', sv: '☕ Varm Dryck' },
-      categories: { en: ['Hot Drink'], sv: ['Varm Dryck'] }
+      title: { en: 'Hot Drinks', sv: 'Varm Dryck', de: 'Heißgetränke', pl: 'Gorące Napoje' },
+      button: { en: '☕ Hot Drinks', sv: '☕ Varm Dryck', de: '☕ Heißgetränke', pl: '☕ Gorące Napoje' },
+      categories: { en: ['Hot Drink'], sv: ['Varm Dryck'], de: ['Heißes Getränk'], pl: ['Gorące Napoje'] }
     },
     'coffee-drinks': {
-      title: { en: 'Coffee Drinks', sv: 'Kaffedrink' },
-      button: { en: '☕ Coffee Drinks', sv: '☕ Kaffedrink' },
-      categories: { en: ['Coffee Drink'], sv: ['Kaffedrink'] }
+      title: { en: 'Coffee Drinks', sv: 'Kaffedrink', de: 'Kaffeegetränke', pl: 'Kawa z alkoholem' },
+      button: { en: '☕ Coffee Drinks', sv: '☕ Kaffedrink', de: '☕ Kaffeegetränke', pl: '☕ Kawa z alkoholem' },
+      categories: { en: ['Coffee Drink'], sv: ['Kaffedrink'], de: ['Kaffeegetränk'], pl: ['Kawa z alkoholem'] }
     }
+  };
+
+  const t = (obj, lang) => {
+    if (!obj) return undefined;
+    if (Object.prototype.hasOwnProperty.call(obj, lang)) return obj[lang];
+    if (Object.prototype.hasOwnProperty.call(obj, 'en')) return obj['en'];
+    // return first available value
+    const keys = Object.keys(obj);
+    return keys.length ? obj[keys[0]] : undefined;
   };
 
   const sectionItemTemplate = (name, description, price) => `
@@ -134,16 +146,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const gridEl = section.querySelector('.menu-grid');
     if (!titleEl || !badgeEl || !gridEl) return;
 
-    titleEl.textContent = config.title[language];
-    badgeEl.textContent = config.badge[language];
+    titleEl.textContent = t(config.title, language) || '';
+    badgeEl.textContent = t(config.badge, language) || '';
 
     if (config.items && config.items[language]) {
       gridEl.innerHTML = config.items[language].map(sectionItemDataTemplate).join('');
       return;
     }
 
-    const allowedCategories = config.categories[language] || [];
-    const items = menuByLanguage[language].filter(([category]) => allowedCategories.includes(category));
+    const allowedCategories = (config.categories && (config.categories[language] || config.categories['en'])) || [];
+    const items = (menuByLanguage[language] || []).filter(([category]) => allowedCategories.includes(category));
     gridEl.innerHTML = items.map(([, name, description, price]) => sectionItemTemplate(name, description, price)).join('');
   };
 
@@ -161,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.category-btn').forEach((button) => {
       const config = drinkConfig[button.dataset.category];
       if (!config) return;
-      button.textContent = config.button[language];
+      button.textContent = (config.button && (config.button[language] || config.button['en'])) || button.textContent;
     });
   };
 
@@ -182,11 +194,11 @@ document.addEventListener('DOMContentLoaded', () => {
     drinkGroups = groupItems(language);
 
     if (languageToggle) {
-      languageToggle.textContent = language === 'en' ? 'SV' : 'EN';
-      languageToggle.setAttribute('aria-label', language === 'en' ? 'Switch to Swedish menu' : 'Switch to English menu');
+      languageToggle.textContent = language.toUpperCase();
+      languageToggle.setAttribute('aria-label', `Switch language. Current: ${language.toUpperCase()}`);
     }
 
-    document.documentElement.lang = language === 'en' ? 'en' : 'sv';
+    document.documentElement.lang = language;
 
     if (drinkModal && !drinkModal.hasAttribute('hidden')) {
       drinkModal.setAttribute('hidden', '');
@@ -196,7 +208,9 @@ document.addEventListener('DOMContentLoaded', () => {
   setLanguage(currentLanguage);
 
   languageToggle.addEventListener('click', () => {
-    setLanguage(currentLanguage === 'en' ? 'sv' : 'en');
+    const idx = languages.indexOf(currentLanguage);
+    const next = languages[(idx + 1) % languages.length];
+    setLanguage(next);
   });
 
   toggle.addEventListener('click', () => {
@@ -214,11 +228,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const openCategoryModal = (categoryKey) => {
     const config = drinkConfig[categoryKey];
     if (!config || !drinkModal || !modalDrinkName || !modalDrinkDetails || !orderBtn) return;
-
-    const drinkCategories = config.categories[currentLanguage] || [];
+    const drinkCategories = (config.categories && (config.categories[currentLanguage] || config.categories['en'])) || [];
     const items = drinkCategories.flatMap((category) => drinkGroups[category] || []);
 
-    modalDrinkName.textContent = config.title[currentLanguage];
+    modalDrinkName.textContent = t(config.title, currentLanguage) || '';
     modalDrinkDetails.innerHTML = `
       <div class="modal-drinks-list">
         ${items.map(([name, description, price]) => `<div class="modal-drink-row"><span>${name}</span><span>${price} SEK</span></div>`).join('')}
